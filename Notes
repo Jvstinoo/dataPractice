@@ -1,0 +1,11 @@
+How are generic types used?
+
+	For non-static methods:
+		Class has to include it will use generic type
+			public class keepEven<E>{
+				public int keepEven(SinglyLinkedList<E> ls);
+				
+	For static methods:
+		Class cannot include but method does.
+			public class keepEven{
+				public stating <E> int keepEven(SinglyLinkedList<E> ls);
