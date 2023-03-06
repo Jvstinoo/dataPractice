@@ -9,3 +9,17 @@ How are generic types used?
 		Class cannot include but method does.
 			public class keepEven{
 				public stating <E> int keepEven(SinglyLinkedList<E> ls);
+
+Stacks:
+	Can be implemented using LinkedLists and Arraylists.
+		ArrayList (ListStack): size()-1 would represent the top of the stack since no shifting would be 				      required.
+		LinkedList (LinkedStack): position 0 would represent the top of the stack since adding at head 						 of Linked List is constant.
+					  pop(){
+						if(isEmpty()) // Can also use head == null
+							throw new NoSuchElementException();
+						Node<E> oldTop = head;
+						E out = oldTop.getElement();
+						top = head.getNext();
+						oldTop.clear();
+						size--;
+						return out;
