@@ -23,3 +23,27 @@ Stacks:
 						oldTop.clear();
 						size--;
 						return out;
+Queues:
+	Can also be implemented using LinkedLists and ArrayLists.
+		ArrayList (Circular ArrayQueue): Most efficient way to implement Queues using ArrayLists since no
+						 shifting is required. Adding to the end of the queue (Enqueue) will
+						 mostly be O(1) except for those times that it will need to reallocate.
+						 To calculate which index should the element being enqueued should go,
+						 rear = (rear + 1) array.length; is used, where rear is the index of the						 last element and array.length is the capacity the ArrayList has.
+						 To dequeue, first we get the value at the front and clear it (set it to						 null), and then, calculate the new front. Like this:
+						 public E dequeue() {
+						 	if(isEmpty())
+								throw Error;
+							E frontVal = theData[front];
+							theData[front] = null;
+							front = (front + 1) % theData.length;
+							size--;
+							return frontVal;	
+						 }
+		ListQueue (DoublyLinkedList Queue): Same implementation as a DoublyLinkedList (dummy header and trailer)
+						    Front: Position 0
+						    Remove: Position 0
+						    Add: size-1 (trailer.getPrev())
+Deque ("Deck"):
+	Double-Ended Queue. Can add and remove at both ends. Mimics the behavior of both Stack and Queue.
+	Can be implemented using CircularArrays and LinkedLists.
