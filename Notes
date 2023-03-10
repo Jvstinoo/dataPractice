@@ -47,3 +47,15 @@ Queues:
 Deque ("Deck"):
 	Double-Ended Queue. Can add and remove at both ends. Mimics the behavior of both Stack and Queue.
 	Can be implemented using CircularArrays and LinkedLists.
+
+Ways to loop Linked Lists/Queues:
+	
+	public String[] toArray() {
+		String[] arr = new String[size()];
+
+		Node<E> curNode = header.getNext();
+		for (int i = 0; curNode != header; curNode = curNode.getNext(), i++) {
+			arr[i] = (String) curNode.getElement();
+		}
+		return arr;
+	}
