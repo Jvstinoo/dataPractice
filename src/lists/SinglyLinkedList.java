@@ -97,7 +97,30 @@ public class SinglyLinkedList<E> implements List<E>{
 		// TODO Auto-generated method stub
 		return size == 0;
 	}
-
+	
+	/**
+	 * Adds a new element to the list. In this case we appends a node with the value obj
+	 * to the end of the chain *RECURSIVELY*
+	 */
+	public Node<E> add(Node<E> header, E obj){
+		if(header.getNext() == null) {
+			Node<E> newNode = new Node<E>(null, obj);
+			header.setNext(newNode);
+			this.size++;
+			return header.getNext();
+		}
+		return add(header.getNext(), obj);
+		
+		/*if(header == null) {
+		Node<E> newNode = new Node<E>(obj);
+		System.out.println(newNode.getElement());
+		return newNode;
+		}
+		else
+			header.next = add(header.getNext(), obj);
+		return header;*/
+	};
+	
 	/**
 	 * Adds a new element to the list. In this case we appends a node with the value obj
 	 * to the end of the chain
@@ -130,7 +153,7 @@ public class SinglyLinkedList<E> implements List<E>{
 	 * 
 	 * @throws IndexOutOfBoundsException if index is not between 0 and size.
 	 */
-	private Node<E> getNode(int index) {
+	public Node<E> getNode(int index) {
 		// Check the index is valid
 		if(index < 0 || index >=size)
 			throw new IndexOutOfBoundsException();

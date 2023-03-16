@@ -22,22 +22,22 @@ class validPalindromeStackTest {
 
 	@Test
 	void testValidOdd() {
-		assertTrue(validPalindromeStack.isValidPalindrome(validOdd) == true, "Test failed!");
+		assertTrue(validPalindromeStackProblem.isValidPalindrome(validOdd) == true, "Test failed!");
 	}
 	
 	@Test
 	void testValidEven() {
-		assertTrue(validPalindromeStack.isValidPalindrome(validEven) == true, "Test failed!");
+		assertTrue(validPalindromeStackProblem.isValidPalindrome(validEven) == true, "Test failed!");
 	}
 	
 	@Test
 	void testNonValidEven() {
-		assertTrue(validPalindromeStack.isValidPalindrome(nonValidEven) == false, "Test failed!");
+		assertTrue(validPalindromeStackProblem.isValidPalindrome(nonValidEven) == false, "Test failed!");
 	}
 	
 	@Test
 	void testNonValidOdd() {
-		assertTrue(validPalindromeStack.isValidPalindrome(nonValidOdd) == false, "Test failed!");
+		assertTrue(validPalindromeStackProblem.isValidPalindrome(nonValidOdd) == false, "Test failed!");
 	}
 
 }

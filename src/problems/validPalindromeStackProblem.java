@@ -3,7 +3,7 @@ import interfaces.*;
 import lists.*;
 import stacks.*;
 
-public class validPalindromeStack {
+public class validPalindromeStackProblem {
 	public static boolean isValidPalindrome(String word) {
 		ArrayListStack<Character> wordStack = new ArrayListStack<Character>();
 		ArrayListStack<Character> halfStack = new ArrayListStack<Character>();
