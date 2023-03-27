@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import interfaces.*;
 import lists.SinglyLinkedList;
 
 class SinglyLinkedListTest {
@@ -26,4 +27,9 @@ class SinglyLinkedListTest {
 		assertTrue(linkedList.get(linkedList.size()-1) == 5, "Failed to add 5 to the end of list: linkedList.");
 	}
 
+	@Test
+	void remove() {
+		linkedList.remove(0);
+		assertTrue(linkedList.get(0) == 1);
+	}
 }
