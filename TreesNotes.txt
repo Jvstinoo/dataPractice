@@ -1,0 +1,19 @@
+Types of Trees:
+
+- Balanced Tree
+	All of its paths have the same length of differ by one.
+
+- Complete Tree
+	All of the levels should be full, the last one does not need to.
+
+- Full Tree
+	Every node has 0 or 2 children.
+
+Traversal of trees:
+
+-In-order
+	L, Rt, R
+-Pre-order
+	Rt, L, R
+-Post-order
+	L, R, Rt 
