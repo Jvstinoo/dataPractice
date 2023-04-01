@@ -1,7 +1,6 @@
 package lists;
 
 import java.util.Iterator;
-import java.util.NoSuchElementException;
 
 import interfaces.List;
 
@@ -66,7 +65,7 @@ public class SinglyLinkedList<E> implements List<E>{
 		 */
 		public void clear() {
 			this.next = null;
-			this.element = null;
+			this.element=null;
 		}	
 		
 	}
@@ -97,30 +96,7 @@ public class SinglyLinkedList<E> implements List<E>{
 		// TODO Auto-generated method stub
 		return size == 0;
 	}
-	
-	/**
-	 * Adds a new element to the list. In this case we appends a node with the value obj
-	 * to the end of the chain *RECURSIVELY*
-	 */
-	public Node<E> add(Node<E> header, E obj){
-		if(header.getNext() == null) {
-			Node<E> newNode = new Node<E>(null, obj);
-			header.setNext(newNode);
-			this.size++;
-			return header.getNext();
-		}
-		return add(header.getNext(), obj);
-		
-		/*if(header == null) {
-		Node<E> newNode = new Node<E>(obj);
-		System.out.println(newNode.getElement());
-		return newNode;
-		}
-		else
-			header.next = add(header.getNext(), obj);
-		return header;*/
-	};
-	
+
 	/**
 	 * Adds a new element to the list. In this case we appends a node with the value obj
 	 * to the end of the chain
@@ -153,9 +129,9 @@ public class SinglyLinkedList<E> implements List<E>{
 	 * 
 	 * @throws IndexOutOfBoundsException if index is not between 0 and size.
 	 */
-	public Node<E> getNode(int index) {
+	private Node<E> getNode(int index) {
 		// Check the index is valid
-		if(index < 0 || index >= size)
+		if(index < 0 || index >=size)
 			throw new IndexOutOfBoundsException();
 		// We start at head
 		Node<E> temp = head;
@@ -364,20 +340,20 @@ public class SinglyLinkedList<E> implements List<E>{
 	@Override
 	public void clear() {
 		// Get first node
-		Node<E> temp = head;
-		// Iterate through list
-		while(temp != null) {
-			// Hold the current node for elimination
-			Node<E> holdNode = temp;
-			// Move to next node
-			temp =temp.getNext();
-			// Clear node
-			holdNode.clear();
-			
-		}
+//		Node<E> temp = head;
+//		// Iterate through list
+//		while(temp != null) {
+//			// Hold the current node for elimination
+//			Node<E> holdNode = temp;
+//			// Move to next node
+//			temp =temp.getNext();
+//			// Clear node
+//			holdNode.clear();
+//			
+//		}
 		
 		// Does this work???
-//		while(!isEmpty()) remove(0);
+		while(!isEmpty()) remove(0);
 		// Reset values for empty list
 		size = 0;
 		head = null;		
@@ -466,15 +442,13 @@ public class SinglyLinkedList<E> implements List<E>{
 	
 	@Override
 	public E first() {
-		if(this.isEmpty())
-			throw new NoSuchElementException();
+		// TODO Auto-generated method stub
 		return this.head.getElement();
 	}
 
 	@Override
 	public E last() {
-		if(this.isEmpty())
-			throw new NoSuchElementException();
+		// TODO Auto-generated method stub
 		return this.get(size-1);
 	}
 	/**
