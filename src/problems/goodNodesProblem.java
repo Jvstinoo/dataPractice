@@ -33,3 +33,27 @@ class goodNodesProblem {
         recGoodNodes(root.right, newMax);
     }
 }
+
+/** 
+class goodNodesProblem {
+    public int goodNodes(TreeNode root) {
+        return recGoodNodes(root, root.val, 0);
+    }
+
+    private int recGoodNodes(TreeNode root, int maxNode, int count) {
+        if (root == null) {
+            return count;
+        }
+
+        if (root.val >= maxNode) {
+            count++;
+            maxNode = root.val;
+        }
+
+        int leftCount = recGoodNodes(root.left, maxNode, count);
+        int rightCount = recGoodNodes(root.right, maxNode, leftCount);
+
+        return rightCount;
+    }
+}
+*/
