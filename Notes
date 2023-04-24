@@ -6,7 +6,7 @@ How are generic types used?
 				public int keepEven(SinglyLinkedList<E> ls);
 				
 	For static methods:
-		Class cannot include but method does.
+		Class does not need to include but method does.
 			public class keepEven{
 				public static <E> int keepEven(SinglyLinkedList<E> ls);
 
