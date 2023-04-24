@@ -7,32 +7,27 @@ import problems.TreeNode;
  //Definition for a binary tree node./
 
 class Solution {
-	 
-    Map<Integer, Integer> map = new HashMap<>();
+	
+	int deepestlevel = 0;
+	int sum = 0; // Sum of nodes at deepestLevel.
     public int deepestLeavesSum(TreeNode root) {
-        int max = 0;
-        recDeepestLeavesSum(root, 0);
-        for(Integer i: map.keySet()){
-            if(map.get(i) > max)
-                max = map.get(i);
-        }
-        return max;
+        return recDeepestLeavesSum(root, 0);
     }
-
-    private void recDeepestLeavesSum(TreeNode root, int count){
-        if(root == null) return;
-
-        if(root.left == null && root.right == null) {
-            if(map.containsKey(count)){
-                Integer c = map.get(count);
-                map.put(count, root.val + c);
-            }
-            else
-                map.put(count, root.val);
-        }
-        recDeepestLeavesSum(root.left, count+=1);
-
-        recDeepestLeavesSum(root.right, count+=1);
-
+    
+    private int recDeepestLeavesSum(TreeNode root, int depth) {
+    	if(root == null) return 0;
+    	
+    	if(root.left == null && root.right == null) {
+	    	if(depth == deepestlevel) {
+	    		sum += root.val;
+	    	}
+	    	else if(depth > deepestlevel) {
+	    		deepestlevel = depth;
+	    		sum = root.val;
+	    	}
+    	}
+    	recDeepestLeavesSum(root.left, depth+1);
+    	recDeepestLeavesSum(root.right, depth+1);
+    	return sum;
     }
 }
