@@ -1,1 +1,1 @@
-Practice problems for Data Structures class.
+### Data Structures: Practice problems and notes 
